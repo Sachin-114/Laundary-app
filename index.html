@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundary app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+  <div class="logo">Wash & Clean</div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+  </ul>
+  <div class="username">Hi, Sachin</div>
+</nav>
+<section class="hero" id="home">
+  <div class="hero-left">
+    <h1>Premium Laundry Services</h1>
+    <p>Fast, affordable and doorstep laundry service.</p>
+    <button onclick="scrollToBooking()">Book a Service Today</button>
+  </div>
+
+  <div class="hero-right">
+    <img src="https://png.pngtree.com/png-vector/20240322/ourmid/pngtree-home-service-house-cleaning-and-laundry-wash-png-image_12190003.png" alt="Laundry Service">
+  </div>
+</section>
+<section class="overview">
+  <div>15+ Laundry Services</div>
+  <div>240+ Happy Customers</div>
+  <div>2+ Years Experience</div>
+</section>
+<section id="booking" class="booking">
+
+  <!-- LEFT -->
+  <div class="left">
+    <h2>Services</h2>
+
+    <div class="service">
+      <p>Wash & Iron - ₹100</p>
+      <button onclick="addItem('Wash & Iron',100)">Add Item</button>
+      <button onclick="removeItem('Wash & Iron',100)">Remove</button>
+    </div>
+
+    <div class="service">
+      <p>Dry Cleaning - ₹150</p>
+      <button onclick="addItem('Dry Cleaning',150)">Add Item</button>
+      <button onclick="removeItem('Dry Cleaning',150)">Remove</button>
+    </div>
+
+    <p class="info">Add items to the cart</p>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+    <div class="cart">
+      <h3>Cart Items</h3>
+      <ul id="cartItems"></ul>
+      <h4>Total: ₹<span id="total">0</span></h4>
+    </div>
+
+    <div class="book-form">
+      <h3>Book Now</h3>
+      <input type="text" id="name" placeholder="Full Name">
+      <input type="email" id="email" placeholder="Email">
+      <input type="tel" id="phone" placeholder="Phone Number">
+      <button onclick="sendEmail()">Book Now</button>
+    </div>
+  </div>
+
+</section>
+<footer class="footer">
+  <div class="footer-logo">Wash & Clean</div>
+
+  <div class="footer-links">
+    <a href="#about">About Us</a>
+    <a href="#">FAQs</a>
+    <a href="#">Terms</a>
+    <a href="#contact">Contact Us</a>
+  </div>
+
+  <div class="social">
+    <a href="#">Instagram</a>
+    <a href="#">Facebook</a>
+    <a href="#">Twitter</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

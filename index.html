@@ -1,95 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laundary app</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Laundry Services</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
-    <nav class="navbar">
-  <div class="logo">Wash & Clean</div>
-  <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#about">About Us</a></li>
-    <li><a href="#contact">Contact Us</a></li>
-  </ul>
-  <div class="username">Hi, Sachin</div>
-</nav>
-<section class="hero" id="home">
-  <div class="hero-left">
-    <h1>Premium Laundry Services</h1>
-    <p>Fast, affordable and doorstep laundry service.</p>
-    <button onclick="scrollToBooking()">Book a Service Today</button>
-  </div>
 
-  <div class="hero-right">
-    <img src="https://png.pngtree.com/png-vector/20240322/ourmid/pngtree-home-service-house-cleaning-and-laundry-wash-png-image_12190003.png" alt="Laundry Service">
-  </div>
-</section>
-<section class="overview">
-  <div>15+ Laundry Services</div>
-  <div>240+ Happy Customers</div>
-  <div>2+ Years Experience</div>
-</section>
-<section id="booking" class="booking">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">LaundryPro</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+    <div class="user">Sachin</div>
+  </nav>
 
-  <!-- LEFT -->
-  <div class="left">
-    <h2>Services</h2>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-left">
+      <h1>Professional Laundry Services</h1>
+      <p>Fast, affordable & premium quality laundry services at your doorstep.</p>
+      <button onclick="scrollToBooking()">Book a Service Today</button>
+    </div>
+    <div class="hero-right">
+      <img src="https://png.pngtree.com/png-vector/20240322/ourmid/pngtree-home-service-house-cleaning-and-laundry-wash-png-image_12190003.png" />
+    </div>
+  </section>
 
-    <div class="service">
-      <p>Wash & Iron - ₹100</p>
-      <button onclick="addItem('Wash & Iron',100)">Add Item</button>
-      <button onclick="removeItem('Wash & Iron',100)">Remove</button>
+  <!-- Service Overview -->
+  <section class="overview">
+    <div>15+ Laundry Services</div>
+    <div>240+ Happy Customers</div>
+    <div>2+ Years Experience</div>
+  </section>
+
+  <!-- Booking -->
+  <section class="booking" id="services">
+    <div class="left">
+      <h2>Our Services</h2>
+
+      <div class="service">
+        <span>Washing</span>
+        <span>₹50</span>
+        <button onclick="addItem('Washing',50)">Add Item</button>
+        <button onclick="removeItem('Washing',50)">Remove</button>
+      </div>
+
+      <div class="service">
+        <span>Ironing</span>
+        <span>₹30</span>
+        <button onclick="addItem('Ironing',30)">Add Item</button>
+        <button onclick="removeItem('Ironing',30)">Remove</button>
+      </div>
+
+      <div class="service">
+        <span>Dry Cleaning</span>
+        <span>₹100</span>
+        <button onclick="addItem('Dry Cleaning',100)">Add Item</button>
+        <button onclick="removeItem('Dry Cleaning',100)">Remove</button>
+      </div>
+
+      <p class="note">Add items to the cart</p>
     </div>
 
-    <div class="service">
-      <p>Dry Cleaning - ₹150</p>
-      <button onclick="addItem('Dry Cleaning',150)">Add Item</button>
-      <button onclick="removeItem('Dry Cleaning',150)">Remove</button>
+    <div class="right">
+      <div class="cart">
+        <h3>Added Items</h3>
+        <ul id="cartItems"></ul>
+        <h4>Total: ₹<span id="total">0</span></h4>
+      </div>
+
+      <div class="form">
+        <h3>Book Now</h3>
+        <input type="text" id="name" placeholder="Full Name" />
+        <input type="email" id="email" placeholder="Email" />
+        <input type="tel" id="phone" placeholder="Phone Number" />
+        <button onclick="bookNow()">Book Now</button>
+        <p id="msg"></p>
+      </div>
     </div>
+  </section>
 
-    <p class="info">Add items to the cart</p>
+  <!-- Quality -->
+  <section class="quality" id="about">
+    <h2>Why Choose Us?</h2>
+    <p>Premium Services • Quick Support • Timely Delivery • Affordable Prices</p>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter" id="contact">
+    <h2>Subscribe to our Newsletter</h2>
+    <input type="text" placeholder="Full Name" />
+    <input type="email" placeholder="Email" />
+    <button>Subscribe</button>
+  </section>
+
+  <footer>
+  <h3>LaundryPro</h3>
+  <p>About Us | FAQs | Contact Us</p>
+
+  <div class="footer-icons">
+    <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
   </div>
 
-  <!-- RIGHT -->
-  <div class="right">
-    <div class="cart">
-      <h3>Cart Items</h3>
-      <ul id="cartItems"></ul>
-      <h4>Total: ₹<span id="total">0</span></h4>
-    </div>
-
-    <div class="book-form">
-      <h3>Book Now</h3>
-      <input type="text" id="name" placeholder="Full Name">
-      <input type="email" id="email" placeholder="Email">
-      <input type="tel" id="phone" placeholder="Phone Number">
-      <button onclick="sendEmail()">Book Now</button>
-    </div>
-  </div>
-
-</section>
-<footer class="footer">
-  <div class="footer-logo">Wash & Clean</div>
-
-  <div class="footer-links">
-    <a href="#about">About Us</a>
-    <a href="#">FAQs</a>
-    <a href="#">Terms</a>
-    <a href="#contact">Contact Us</a>
-  </div>
-
-  <div class="social">
-    <a href="#">Instagram</a>
-    <a href="#">Facebook</a>
-    <a href="#">Twitter</a>
-  </div>
+  <p>© 2026 LaundryPro. All Rights Reserved</p>
 </footer>
 
-<script src="script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
